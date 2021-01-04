@@ -10,11 +10,30 @@
 
     <h1>Home</h1>
 		
-    <p>Year:</p>
-    <p id="year">The year update doesn't work :(</p>
+    <label>Year:</label>
+    <value id="year">-</value>
+    <br>
+    <label>Month:</label>
+    <value id="month">-</value>
+    <br>
+    <label>Hour:</label>
+    <value id="hour">-</value>
+    <br>
+    <label>Minute:</label>
+    <value id="minute">-</value>
+    <br>
+    <label>Second:</label>
+    <value id="second">-</value>
+    <br>
+    <label>Millisecond:</label>
+    <value id="millisecond">-</value>
+    <br>
+		
+    <button type="button" id="startButton">Start clock</button>
+    <button type="button" id="stopButton">Stop clock</button>
 
     <script> 
-        window.onload = updateYear();
+      window.onload = addEventListeners();
     </script> 
   </body>
 </html>
