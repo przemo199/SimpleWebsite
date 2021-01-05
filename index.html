@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+	  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
     <title>Main page</title>
   </head>
 
@@ -15,6 +16,12 @@
     <br>
     <label>Month:</label>
     <value id="month">-</value>
+    <br>
+		<label>Date:</label>
+    <value id="date">-</value>
+    <br>
+		<label>Day:</label>
+    <value id="day">-</value>
     <br>
     <label>Hour:</label>
     <value id="hour">-</value>
@@ -32,8 +39,6 @@
     <button type="button" id="startButton">Start clock</button>
     <button type="button" id="stopButton">Stop clock</button>
 
-    <script> 
-      window.onload = addEventListeners();
-    </script> 
+    <script src="js/script.js"></script>
   </body>
 </html>
