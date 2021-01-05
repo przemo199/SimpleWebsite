@@ -3,12 +3,15 @@
 var interval;
 
 function startUpdates() {
-	updateValues();
-	interval = window.setInterval(updateValues, 100);
+  if (interval == null) {
+    updateValues();
+    interval = window.setInterval(updateValues, 100);
+  }
 }
 
 function stopUpdates() {
-	window.clearInterval(interval);
+  window.clearInterval(interval);
+  interval = null;
 }
 
 function updateValues() {
@@ -24,7 +27,7 @@ function updateValues() {
 }
 
 function addEventListeners() {
-	document.getElementById("startButton").onclick = startUpdates;
+  document.getElementById("startButton").onclick = startUpdates;
 	document.getElementById("stopButton").onclick = stopUpdates;
 }
 
