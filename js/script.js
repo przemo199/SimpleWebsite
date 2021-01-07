@@ -15,7 +15,7 @@ function stopUpdates() {
 }
 
 function updateValues() {
-  var date = new Date();
+  let date = new Date();
   document.getElementById("year").textContent = date.getFullYear();
   document.getElementById("month").textContent = date.getMonth();
   document.getElementById("date").textContent = date.getDate();
@@ -31,4 +31,8 @@ function addEventListeners() {
   document.getElementById("stopButton").onclick = stopUpdates;
 }
 
-addEventListeners();
+function alive() {
+  console.log("I am alive!");
+}
+
+window.addEventListener('DOMContentLoaded', addEventListeners);
