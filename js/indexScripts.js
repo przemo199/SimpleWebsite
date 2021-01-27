@@ -31,8 +31,4 @@ function addEventListeners() {
   document.getElementById("stopButton").onclick = stopUpdates;
 }
 
-function alive() {
-  console.log("I am alive!");
-}
-
 window.addEventListener('DOMContentLoaded', addEventListeners);
