@@ -1,6 +1,6 @@
 "use strict";
 
-var interval;
+let interval;
 
 function startUpdates() {
   if (interval == null) {
@@ -26,9 +26,34 @@ function updateValues() {
   document.getElementById("millisecond").textContent = date.getMilliseconds();
 }
 
-function addEventListeners() {
-  document.getElementById("startButton").onclick = startUpdates;
-  document.getElementById("stopButton").onclick = stopUpdates;
+function showModal() {
+  document.getElementById("mainModal").style.display = "block";
 }
 
-window.addEventListener('DOMContentLoaded', addEventListeners);
+function closeModal() {
+  document.getElementById("mainModal").style.display = "none";
+}
+
+function addListeners() {
+  document.getElementById('startButton').addEventListener('click', function () {
+    startUpdates();
+    showModal();
+  });
+
+  document.getElementById("stopButton").onclick = stopUpdates;
+
+  const buttons = [].slice.call(document.querySelectorAll(".close"));
+
+  for (const button of buttons) {
+    button.addEventListener("click", closeModal);
+  }
+
+  window.onclick = function (event) {
+    let modal = document.getElementById("mainModal");
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+}
+
+window.addEventListener('DOMContentLoaded', addListeners);

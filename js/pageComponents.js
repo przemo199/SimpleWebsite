@@ -1,3 +1,3 @@
 "use strict";
 
-$("#nav_container").load("common/navbar.html");
+$("#navbar").load("common/navbar.html");

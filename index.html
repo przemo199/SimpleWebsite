@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="css/style.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"
@@ -16,12 +16,24 @@
 </head>
 
 <body>
-  <div id="nav_container"></div>
+  <div id="navbar"></div>
 
   <div id="content">
+    <div id="mainModal" class="modal">
+      <div id="modal-content">
+        <span class="close close-x">&times;</span>
+        <h5>Unfortunately, the clock is ticking</h5>
+        <p>The hours are going by. The past increases, the<br>
+          future recedes. Possibilities decreasing, regrets<br>
+          mounting.<br><br>
+          Do you understand?</p>
+        <button type="button" class="close"><b>I understand</b></button>
+        <button type="button" class="close">remain ignorant</button>
+      </div>
+    </div>
+
     <h1>Home</h1>
 
-    <br>
     <p class="label">Year:</p>
     <p class="value" id="year">-</p>
     <br>
@@ -52,5 +64,4 @@
   </div>
   <div id="footer_container"></div>
 </body>
-
 </html>
