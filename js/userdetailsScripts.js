@@ -6,12 +6,13 @@ function showLocation(position) {
 }
 
 $("#user_agent").text(navigator.userAgent);
+
 function showViewportSize() {
   $("#viewport").text($(window).width() + "×" + $(window).height());
 }
+
+$(window).on("resize", showViewportSize);
 showViewportSize();
-$(window).on("resize", showViewportSize)
-// window.addEventListener('resize', showViewportSize);
 
 $("#languages").text(navigator.languages.join(", "));
 
@@ -41,19 +42,20 @@ function initMap() {
   });
 }
 
-$("#find-button").click(function () {
-  navigator.geolocation.getCurrentPosition(showLocation)
+function showLocationOnMap() {
   if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(showLocation);
     navigator.geolocation.getCurrentPosition(function (position) {
       let infoWindow = new google.maps.InfoWindow({map: map});
       let pos = {lat: position.coords.latitude, lng: position.coords.longitude};
-      console.log(1)
       infoWindow.setPosition(pos);
       infoWindow.setContent("Found your location <br/>Lat : " + position.coords.latitude + " </br>Lang :" + position.coords.longitude);
       map.panTo(pos);
-      console.log(1)
     });
   } else {
-    console.log("Browser doesn't support geolocation!");
+    $("#latitude").text("Browser doesn't support geolocation!");
+    $("#longitude").text("Browser doesn't support geolocation!");
   }
-});
+}
+
+$("#find-button").click(showLocationOnMap);
