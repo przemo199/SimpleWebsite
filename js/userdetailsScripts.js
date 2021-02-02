@@ -35,7 +35,7 @@ $("#webdriver").text(navigator.webdriver ? navigator.webdriver : "undefined");
 let map;
 
 function initMap() {
-  var mapCenter = new google.maps.LatLng(0.0, 0.0); //Google map Coordinates
+  let mapCenter = new google.maps.LatLng(0.0, 0.0); //Google map Coordinates
   map = new google.maps.Map($("#map")[0], {
     center: mapCenter,
     zoom: 8

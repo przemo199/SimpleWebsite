@@ -17,7 +17,7 @@ function setNewUrl() {
 $("#urlButton").click(setNewUrl);
 
 $(document).on("keypress", "#url-field", function (e) {
-  if (e.which == 13) {
+  if (e.which === 13) {
     setNewUrl();
   }
 });
