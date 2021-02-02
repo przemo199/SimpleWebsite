@@ -1,23 +1,33 @@
 "use strict";
 
-const button = $("#test-button");
+const testButton = $("#test-button");
+let t;
 
 function prepareTest() {
-  button.html("<p>Click on screen when it changes color</p>");
-  button.off();
-  setTimeout(startTest, 1000 + Math.random() * 1000);
+  testButton.find("p").text("Click on screen as quickly as you can when colour changes");
+  testButton.off();
+  testButton.click(handleFalseStart);
+  t = setTimeout(startTest, 1000 + Math.random() * 1000);
+}
+
+function handleFalseStart() {
+  testButton.off();
+  clearTimeout(t);
+  testButton.find("p").html("You clicked too early<br/>Click to try again...");
+  testButton.click(prepareTest);
 }
 
 function startTest() {
-  button.css("background-color", "#A91B0D");
+  testButton.off();
+  testButton.css("background-color", "#A91B0D");
   let milliseconds = window.performance.now();
-  button.click(function () {
-    button.off();
-    button.html("<p>Your reaction time: " + (window.performance.now() - milliseconds).toFixed(2) + "ms<br/>"
-      + "Click to try again...</p>");
-    button.css("background-color", "#1877f2");
-    button.click(prepareTest);
+  testButton.click(function () {
+    testButton.off();
+    testButton.find("p").html("Your reaction time: " + (window.performance.now() - milliseconds).toFixed(2) + "ms<br/>"
+        + "Click to try again...");
+    testButton.css("background-color", "#1877f2");
+    testButton.click(prepareTest);
   });
 }
 
-button.click(prepareTest);
+testButton.click(prepareTest);
