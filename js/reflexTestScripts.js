@@ -4,7 +4,7 @@ const testButton = $("#test-button");
 let t;
 
 function prepareTest() {
-  testButton.find("p").text("Click on screen as quickly as you can when colour changes");
+  testButton.find("p").text("Click on screen as quickly as you can when the background colour changes");
   testButton.off();
   testButton.click(handleFalseStart);
   t = setTimeout(startTest, 1000 + Math.random() * 1000);

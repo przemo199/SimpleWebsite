@@ -1,8 +1,16 @@
 "use strict";
 
-function showLocation(position) {
+function displayLocation(position) {
   $("#latitude").text(position.coords.latitude);
   $("#longitude").text(position.coords.longitude);
+}
+
+function panMap(position) {
+  let newSrc = "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d19034.01076623676!2d" +
+      position.coords.longitude + "!3d" + position.coords.latitude +
+      "!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2suk!4v1613246103332!5m2!1spl!2suk";
+  console.log(newSrc);
+  map.attr("src", newSrc);
 }
 
 $("#user_agent").text(navigator.userAgent);
@@ -32,26 +40,12 @@ $.get('https://www.cloudflare.com/cdn-cgi/trace', function (response) {
 
 $("#webdriver").text(navigator.webdriver ? navigator.webdriver : "undefined");
 
-let map;
-
-function initMap() {
-  let mapCenter = new google.maps.LatLng(0.0, 0.0); //Google map Coordinates
-  map = new google.maps.Map($("#map")[0], {
-    center: mapCenter,
-    zoom: 8
-  });
-}
+let map = $("#map");
 
 function showLocationOnMap() {
   if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(showLocation);
-    navigator.geolocation.getCurrentPosition(function (position) {
-      let infoWindow = new google.maps.InfoWindow({map: map});
-      let pos = {lat: position.coords.latitude, lng: position.coords.longitude};
-      infoWindow.setPosition(pos);
-      infoWindow.setContent("Found your location <br/>Lat : " + position.coords.latitude + " </br>Lang :" + position.coords.longitude);
-      map.panTo(pos);
-    });
+    navigator.geolocation.getCurrentPosition(displayLocation);
+    navigator.geolocation.getCurrentPosition(panMap);
   } else {
     $("#latitude").text("Browser doesn't support geolocation!");
     $("#longitude").text("Browser doesn't support geolocation!");

@@ -13,8 +13,6 @@
           defer></script>
   <script src="js/userdetailsScripts.js" defer></script>
   <script src="js/pageComponents.js" defer></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeLOh2lUu5iC51BSfZ1b5z5rRsSPNhHxs&callback=initMap"
-          defer></script>
   <title>User details</title>
 </head>
 
@@ -55,7 +53,8 @@
     <p class="value" id="webdriver">-</p>
     <br>
     <button id="find-button">Show My Location</button>
-    <div id="map"></div>
+    <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d19034.01076623676!2d0.0!3d0.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2suk!4v1613246103332!5m2!1spl!2suk"
+            style="border:0;" allow="fullscreen" aria-hidden="false" tabindex="0"></iframe>
   </div>
   <div id="footer"></div>
 </body>
