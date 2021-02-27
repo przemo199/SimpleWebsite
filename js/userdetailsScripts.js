@@ -1,5 +1,17 @@
 "use strict";
 
+let map = $("#map");
+
+function showLocationOnMap() {
+  if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(displayLocation);
+    navigator.geolocation.getCurrentPosition(panMap);
+  } else {
+    $("#latitude").text("Browser doesn't support geolocation!");
+    $("#longitude").text("Browser doesn't support geolocation!");
+  }
+}
+
 function displayLocation(position) {
   $("#latitude").text(position.coords.latitude);
   $("#longitude").text(position.coords.longitude);
@@ -13,11 +25,11 @@ function panMap(position) {
   map.attr("src", newSrc);
 }
 
-$("#user_agent").text(navigator.userAgent);
-
 function showViewportSize() {
   $("#viewport").text($(window).width() + "×" + $(window).height());
 }
+
+$("#user_agent").text(navigator.userAgent);
 
 $(window).on("resize", showViewportSize);
 showViewportSize();
@@ -39,17 +51,5 @@ $.get('https://www.cloudflare.com/cdn-cgi/trace', function (response) {
 // Possible to reverse location with https://nominatim.openstreetmap.org/reverse?lat=53.399191&lon=-1.502347&format=json
 
 $("#webdriver").text(navigator.webdriver ? navigator.webdriver : "undefined");
-
-let map = $("#map");
-
-function showLocationOnMap() {
-  if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(displayLocation);
-    navigator.geolocation.getCurrentPosition(panMap);
-  } else {
-    $("#latitude").text("Browser doesn't support geolocation!");
-    $("#longitude").text("Browser doesn't support geolocation!");
-  }
-}
 
 $("#find-button").click(showLocationOnMap);

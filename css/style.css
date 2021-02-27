@@ -15,7 +15,7 @@ body {
   z-index: 999;
 }
 
-#content {
+#main {
   margin: 0 1rem;
   flex: 1 0 auto;
   padding-bottom: 1rem;
@@ -79,7 +79,7 @@ footer {
   float: right;
   display: inline-block;
   position: relative;
-  margin-top: -350px
+  margin-top: -350px;
   /* to be changed later as it breaks view on mobile */
 }
 
