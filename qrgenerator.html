@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"
+          defer></script>
+  <script src="js/qrGeneratorScripts.js" defer></script>
+  <script src="js/pageComponents.js" defer></script>
+  <title>User details</title>
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <div id="main">
+    <h1>QR-code generator</h1>
+
+    <form>
+      <label for="text">Text to encode:</label>
+      <input id="text" name="text" type="text" value="https://linkedin.com/in/przemekkaminski/">
+      <br>
+      <label>Encoding:</label>
+      <select id="encoding">
+        <option value="UTF-8">UTF-8</option>
+        <option value="Shift_JIS">Shift_JIS</option>
+        <option value="ISO-8859-1">ISO-8859-1</option>
+      </select>
+      <br>
+      <label for="width">Width of the QR-code:</label>
+      <input id="width" name="width" type="text" value="500" placeholder="500" title="Maximum resolution for QR code is 30000 pixels">
+      <br>
+      <label for="height">Height of the QR-code:</label>
+      <input id="height" name="height" type="text" value="500" placeholder="500" title="Maximum resolution for QR code is 30000 pixels">
+      <br>
+      <label for="error-correction">Error correction level:</label>
+      <select id="error-correction">
+        <option value="L">L</option>
+        <option value="M">M</option>
+        <option value="Q">Q</option>
+        <option value="H">H</option>
+      </select>
+      <br>
+      <label for="height">Margin:</label>
+      <input id="margin" name="margin" type="text" value="4" placeholder="4">
+    </form>
+
+    <button id="generate-button">Generate</button>
+    <br>
+
+    <img id="qr-code" src="https://chart.googleapis.com/chart?chs=500x500&chld=M&cht=qr&chl=https://linkedin.com/in/przemekkaminski/">
+
+  </div>
+  <div id="footer"></div>
+</body>
+
+</html>

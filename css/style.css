@@ -8,6 +8,11 @@ body {
   flex-direction: column;
 }
 
+img {
+  border: 2px solid black;
+  margin: 10px 0;
+}
+
 #navbar {
   position: fixed;
   top: 0;
@@ -35,6 +40,10 @@ body {
 
 .label, .value {
   display: inline-block;
+}
+
+label {
+  margin: 6px;
 }
 
 nav ul {
@@ -95,6 +104,14 @@ footer {
 #test-button p {
   margin-top: calc(15% - 0.5rem);
   vertical-align: center;
+}
+
+#generate-button {
+  margin: 10px 0;
+}
+
+#text {
+  width: 30%;
 }
 
 /* The Modal (background) */
