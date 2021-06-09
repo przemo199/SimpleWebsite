@@ -4,17 +4,17 @@ const url = "https://chart.googleapis.com/chart?cht=qr&";
 
 function updateSrc() {
   let query = url;
-  query +="chs=";
+  query += "chs=";
   query += $("#width").val();
   query += "x";
   query += $("#height").val();
-  query +="&chl=";
+  query += "&chl=";
   query += $("#text").val();
-  query +="&choe=";
+  query += "&choe=";
   query += $("#encoding").val();
-  query +="&chld=";
+  query += "&chld=";
   query += $("#error-correction").val();
-  query +="|";
+  query += "|";
   query += $("#margin").val();
   console.log(query);
   $("#qr-code").attr("src", query);
