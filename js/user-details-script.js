@@ -15,6 +15,17 @@ function showLocationOnMap() {
 function displayLocation(position) {
   $("#latitude").text(position.coords.latitude);
   $("#longitude").text(position.coords.longitude);
+  let requestUrl = "https://nominatim.openstreetmap.org/reverse?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&format=json";
+  $.get(requestUrl, function (response) {
+    let address = response.address;
+    $("#house-number").text(address.house_number);
+    $("#road").text(address.road);
+    $("#suburb").text(address.suburb);
+    $("#city").text(address.city);
+    $("#state").text(address.state);
+    $("#postcode").text(address.postcode);
+    $("#country").text(address.country);
+  });
 }
 
 function panMap(position) {

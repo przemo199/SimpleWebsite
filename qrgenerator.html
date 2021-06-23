@@ -13,25 +13,25 @@
   <div id="main">
     <h1>QR-code generator</h1>
 
-    <form>
+    <form class="col-md-4">
       <label for="text">Text to encode:</label>
-      <input id="text" name="text" type="text" value="https://linkedin.com/in/przemekkaminski/">
+      <input class="form-control" id="text" name="text" type="text" value="https://linkedin.com/in/przemekkaminski/">
       <br>
       <label for="encoding">Encoding:</label>
-      <select id="encoding">
+      <select class="form-select" id="encoding">
         <option value="UTF-8">UTF-8</option>
         <option value="Shift_JIS">Shift_JIS</option>
         <option value="ISO-8859-1">ISO-8859-1</option>
       </select>
       <br>
       <label for="width">QR code width:</label>
-      <input id="width" name="width" type="text" value="500" placeholder="500" title="Maximum resolution for the QR code is 30000 pixels">
+      <input class="form-control col-md-1" id="width" name="width" type="text" value="500" placeholder="500" title="Maximum resolution for the QR code is 30000 pixels">
       <br>
       <label for="height">QR code height:</label>
-      <input id="height" name="height" type="text" value="500" placeholder="500" title="Maximum resolution for the QR code is 30000 pixels">
+      <input class="form-control col-sm-1" id="height" name="height" type="text" value="500" placeholder="500" title="Maximum resolution for the QR code is 30000 pixels">
       <br>
       <label for="error-correction">Error correction level:</label>
-      <select id="error-correction">
+      <select class="form-select" id="error-correction">
         <option value="L">L</option>
         <option value="M">M</option>
         <option value="Q">Q</option>
@@ -39,10 +39,10 @@
       </select>
       <br>
       <label for="margin">Margin:</label>
-      <input id="margin" name="margin" type="text" value="4" placeholder="4">
+      <input class="form-control col-sm-1" id="margin" name="margin" type="text" value="4" placeholder="4">
     </form>
 
-    <button id="generate-button">Generate</button>
+    <button class="btn btn-primary" id="button-generate">Generate</button>
     <br>
 
     <img alt="custom QR code" id="qr-code" src="https://chart.googleapis.com/chart?chs=500x500&chld=M&cht=qr&chl=https://linkedin.com/in/przemekkaminski/">

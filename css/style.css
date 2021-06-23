@@ -106,12 +106,8 @@ footer {
   vertical-align: center;
 }
 
-#generate-button {
+#button-generate {
   margin: 10px 0;
-}
-
-#text {
-  width: 30%;
 }
 
 /* The Modal (background) */
