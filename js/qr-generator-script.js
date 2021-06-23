@@ -16,9 +16,8 @@ function updateSrc() {
   query += $("#error-correction").val();
   query += "|";
   query += $("#margin").val();
-  console.log(query);
   $("#qr-code").attr("src", query);
-  return false;
+  //return false;
 }
 
 $("#generate-button").click(updateSrc);
